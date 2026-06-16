@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#1A2029"/>
+      <stop offset="100%" stop-color="#0E1116"/>
+    </radialGradient>
+    <radialGradient id="bubble" cx="42%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#6FE8AB"/>
+      <stop offset="60%" stop-color="#35D07F"/>
+      <stop offset="100%" stop-color="#22B968"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="22" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- rounded background -->
+  <rect x="0" y="0" width="1024" height="1024" rx="224" fill="url(#bg)"/>
+
+  <!-- outer dial ring -->
+  <circle cx="512" cy="512" r="360" fill="none" stroke="#FFFFFF" stroke-opacity="0.16" stroke-width="14"/>
+
+  <!-- crosshair -->
+  <line x1="152" y1="512" x2="872" y2="512" stroke="#FFFFFF" stroke-opacity="0.10" stroke-width="10"/>
+  <line x1="512" y1="152" x2="512" y2="872" stroke="#FFFFFF" stroke-opacity="0.10" stroke-width="10"/>
+
+  <!-- center target ring -->
+  <circle cx="512" cy="512" r="190" fill="none" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="10"/>
+
+  <!-- the bubble -->
+  <circle cx="512" cy="512" r="150" fill="url(#bubble)" filter="url(#glow)"/>
+  <!-- highlight -->
+  <ellipse cx="470" cy="468" rx="58" ry="40" fill="#FFFFFF" fill-opacity="0.35"/>
+</svg>
